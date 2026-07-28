@@ -4,8 +4,8 @@ class Solution {
         int min = prices[0];
         int max = 0;
         for(int i = 1 ; i<n ;i++){
-          if(prices[i ] < min){
-            min = prices[i ];
+          if(prices[i -1 ] < min){
+            min = prices[i -1 ];
           }
           int profit =  prices[i] -  min;
 
