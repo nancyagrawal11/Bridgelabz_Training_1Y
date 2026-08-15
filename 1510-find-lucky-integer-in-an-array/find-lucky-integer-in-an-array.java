@@ -18,7 +18,7 @@ class Solution {
         }
 
         // Find largest lucky integer
-        for (int i = max; i >= 1; i--) {
+        for (int i = max; i >=1; i--) {
             if (freq[i] == i) {
                 return i;
             }
