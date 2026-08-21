@@ -13,7 +13,7 @@ class Solution {
             }
         }
 
-        return String.join(" ", words);
+        return String.join( " " ,words);
     
 
 }
