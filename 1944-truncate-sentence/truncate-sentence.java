@@ -5,9 +5,9 @@ class Solution {
         for(int i = 0 ; i<k ;i++){
             a[i] = word[i];
         }
-        String n = String.join(" ",a);
-       
+        
 
-        return n;
+        return String.join(" ",a);
+       
     }
 }
