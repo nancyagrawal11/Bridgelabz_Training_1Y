@@ -6,7 +6,7 @@ class Solution {
 
             if (arr[i] == '?') {
 
-                for (char c = 'a'; c <= 'z'; c++) {
+                for (char c = 'a'; c <= 'c'; c++) {
 
                     if ((i == 0 || arr[i - 1] != c) &&
                         (i == arr.length - 1 || arr[i + 1] != c)) {
