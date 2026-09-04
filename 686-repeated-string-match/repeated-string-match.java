@@ -1,25 +1,26 @@
 class Solution {
     public int repeatedStringMatch(String a, String b) {
 
-      StringBuilder res = new StringBuilder();
-      int count = 0;
+       StringBuilder res = new StringBuilder();
+        int count = 0;
 
-     while (res.length() < b.length()) {
-         res.append(a);
-         count++;
+        while (res.length() < b.length()) {
+            res.append(a);
+            count++;
         }
 
-      if (res.toString().contains(b)) {
-         return count;
+        if (res.indexOf(b) != -1) {
+            return count;
         }
 
-       res.append(a);
+        res.append(a);
         count++;
 
-      if (res.toString().contains(b)) {
-          return count;
+        if (res.indexOf(b) != -1) {
+            return count;
         }
 
-       return -1;
+        return -1;
     }
 }
+   
