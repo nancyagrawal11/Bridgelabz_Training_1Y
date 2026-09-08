@@ -1,28 +1,29 @@
 class Solution {
     public int minimumRecolors(String blocks, int k) {
-        int black = 0;
-        int minRecolors = Integer.MAX_VALUE;
+        int  n = blocks.length();
+        int[] prefix = new int[n + 1];
 
-        for (int i = 0; i < blocks.length(); i++) {
-            
-            if (blocks.charAt(i) == 'B') {
-                black++;
-            }
+  
+    for (int i = 0; i < n; i++) {
+        prefix[i + 1] = prefix[i];
 
-            
-            if (i >= k) {
-                if (blocks.charAt(i - k) == 'B') {
-                    black--;
-                }
-            }
-
-            if (i >= k - 1) {
-                int recolors = k - black;
-                minRecolors = Math.min(minRecolors, recolors);
-            }
+        if (blocks.charAt(i) == 'B') {
+            prefix[i + 1]++;
         }
+    }
 
-        return minRecolors;
+    int minRecolors = Integer.MAX_VALUE;
+
+    for (int i = 0; i <= n - k; i++) {
+
+        int black = prefix[i + k] - prefix[i];
+
+        int recolors = k - black;
+
+        minRecolors = Math.min(minRecolors, recolors);
+    }
+
+    return minRecolors;
 
         
     }
