@@ -1,19 +1,18 @@
 class Solution {
     public int firstUniqChar(String s) {
-    
-      char[] ch = s.toCharArray();
-      int[] count = new int[256];
+        HashMap<Character , Integer> frequency = new HashMap<>();
 
-     for (int i = 0; i < ch.length; i++) {
-        count[ch[i]]++;
-      }
 
-     for (int i = 0; i < ch.length; i++) {
-        if (count[ch[i]] == 1) {
-        return i;
-    }
-     }
 
-return -1;
+        for (char ch : s.toCharArray()) {
+            frequency.put(ch, frequency.getOrDefault(ch, 0) + 1);
+        }
+         for (int i = 0; i < s.length(); i++) {
+            if (frequency.get(s.charAt(i)) == 1) {
+                return i;
+            }
+        }
+
+        return -1;        
     }
 }
